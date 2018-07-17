@@ -10,9 +10,12 @@ datagroup: faa_flight_data_default_datagroup {
 
 persist_with: faa_flight_data_default_datagroup
 
-explore: accidents {}
+explore: accidents {
+  group_label: "FAA"
+}
 
 explore: aircraft {
+  group_label: "FAA"
   join: aircraft_types {
     type: left_outer
     sql_on: ${aircraft.aircraft_type_id} = ${aircraft_types.aircraft_type_id} ;;
@@ -26,9 +29,12 @@ explore: aircraft {
   }
 }
 
-explore: aircraft_engine_types {}
+explore: aircraft_engine_types {
+  group_label: "FAA"
+}
 
 explore: aircraft_engines {
+  group_label: "FAA"
   join: aircraft_engine_types {
     type: left_outer
     sql_on: ${aircraft_engines.aircraft_engine_type_id} = ${aircraft_engine_types.aircraft_engine_type_id} ;;
@@ -37,6 +43,7 @@ explore: aircraft_engines {
 }
 
 explore: aircraft_models {
+  group_label: "FAA"
   join: aircraft_types {
     type: left_outer
     sql_on: ${aircraft_models.aircraft_type_id} = ${aircraft_types.aircraft_type_id} ;;
@@ -50,18 +57,34 @@ explore: aircraft_models {
   }
 }
 
-explore: aircraft_types {}
+explore: aircraft_types {
+  group_label: "FAA"
+}
 
-explore: airport_remarks {}
+explore: airport_remarks {
+  group_label: "FAA"
+}
 
-explore: airports {}
+explore: airports {
+  group_label: "FAA"
+}
 
-explore: carriers {}
+explore: carriers {
+  group_label: "FAA"
+}
 
-explore: exceptions {}
+explore: exceptions {
+  group_label: "FAA"
+}
 
-explore: ontime {}
+explore: ontime {
+  group_label: "FAA"
+}
 
-explore: states {}
+explore: states {
+  group_label: "FAA"
+}
 
-explore: zipcodes {}
+explore: zipcodes {
+  group_label: "FAA"
+}
